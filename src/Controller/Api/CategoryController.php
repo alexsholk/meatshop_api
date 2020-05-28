@@ -14,7 +14,7 @@ class CategoryController
 
     public function __construct()
     {
-        $this->data = require __DIR__ . '/../../../data/catalog.php';
+        $this->data = require __DIR__ . '/../../../data/categories.php';
     }
 
     /**
@@ -22,8 +22,7 @@ class CategoryController
      */
     public function list()
     {
-        $data = $this->data['categories'];
-        $response = new JsonResponse($data);
+        $response = new JsonResponse($this->data);
         $response->headers->set('Access-Control-Allow-Origin', '*');
         return $response;
     }

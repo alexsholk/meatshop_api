@@ -15,7 +15,7 @@ class ProductController
 
     public function __construct()
     {
-        $this->data = require __DIR__ . '/../../../data/catalog.php';
+        $this->data = require __DIR__ . '/../../../data/products.php';
     }
 
     /**
@@ -23,11 +23,16 @@ class ProductController
      */
     public function list(Request $request)
     {
-        $categoryId = $request->query->get('categoryId');
-
-        $data = array_values(array_filter($this->data['products'], function ($product) use ($categoryId) {
-            return $categoryId ? $product['categoryId'] == $categoryId : true;
-        }));
+        $data = [];
+        if ($categoryId = $request->query->get('categoryId')) {
+            foreach ($this->data as $product) {
+                if ($product['categoryId'] == $categoryId) {
+                    $data[] = $product;
+                }
+            }
+        } else {
+            $data = $this->data;
+        }
 
         $response = new JsonResponse($data);
         $response->headers->set('Access-Control-Allow-Origin', '*');
