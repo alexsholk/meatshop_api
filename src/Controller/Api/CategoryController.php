@@ -3,6 +3,7 @@
 namespace App\Controller\Api;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -22,7 +23,7 @@ class CategoryController
      */
     public function list()
     {
-        $response = new JsonResponse($this->data);
+        $response = new JsonResponse($this->data, Response::HTTP_OK);
         $response->headers->set('Access-Control-Allow-Origin', '*');
         return $response;
     }

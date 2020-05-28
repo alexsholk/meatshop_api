@@ -4,6 +4,7 @@ namespace App\Controller\Api;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -34,7 +35,7 @@ class ProductController
             $data = $this->data;
         }
 
-        $response = new JsonResponse($data);
+        $response = new JsonResponse($data, Response::HTTP_OK);
         $response->headers->set('Access-Control-Allow-Origin', '*');
         return $response;
     }
