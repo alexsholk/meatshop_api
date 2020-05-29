@@ -11,6 +11,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque odio nesciunt quibusdam, inventore quam maiores.',
             'nutrients' => ['p' => 24, 'f' => 35, 'c' => 21, 'e' => 472],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             // Опции товара
             'options' => [
                 'slicing' => [
@@ -102,6 +103,7 @@ return [
             'image' => '2.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
             'nutrients' => ['p' => 26, 'f' => 32, 'c' => 28, 'e' => 452],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -137,6 +139,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, facere, nulla.',
             'nutrients' => ['p' => 22, 'f' => 37, 'c' => 25, 'e' => 460],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -172,6 +175,7 @@ return [
             'image' => '2.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque maiores mollitia nihil sint vero?',
             'nutrients' => ['p' => 23, 'f' => 34, 'c' => 28, 'e' => 435],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -207,6 +211,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             'nutrients' => ['p' => 24, 'f' => 35, 'c' => 21, 'e' => 472],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -230,6 +235,7 @@ return [
             'image' => '2.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -266,6 +272,7 @@ return [
             'image' => '2.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -301,6 +308,7 @@ return [
             'image' => '2.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -336,6 +344,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -371,6 +380,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -406,6 +416,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -441,6 +452,7 @@ return [
             'image' => '2.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -477,6 +489,7 @@ return [
             'image' => '2.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -512,6 +525,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -547,6 +561,7 @@ return [
             'image' => '2.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -582,6 +597,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -617,6 +633,7 @@ return [
             'image' => '2.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -652,6 +669,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -688,6 +706,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'price' => 180,
             'options' => [
                 'slicing' => false,
@@ -763,6 +782,7 @@ return [
             'image' => '2.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -798,6 +818,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
@@ -821,6 +842,7 @@ return [
             'image' => '1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
             'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
+            'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
             'options' => [
                 'slicing' => [
                     'title' => 'Нарезка',
