@@ -28,7 +28,7 @@ class StaticPageController
 
         if ($slug = $request->query->get('slug')) {
             foreach ($this->data as $staticPage) {
-                if ($staticPage['slug'] == $slug) {
+                if ($staticPage['data']['slug'] == $slug) {
                     $data[] = $staticPage;
                 }
             }
