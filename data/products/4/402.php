@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'categoryId' => 4,
+    'category_id' => 4,
     'id' => 402,
     'data' => [
         'title' => 'Грудка',
-        'longTitle' => 'Грудка (курица)',
+        'long_title' => 'Грудка (курица)',
         'image' => '2.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],

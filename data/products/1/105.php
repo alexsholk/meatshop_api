@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'categoryId' => 1,
+    'category_id' => 1,
     'id' => 105,
     'data' => [
         'title' => 'Ребра',
-        'longTitle' => 'Ребра свиные',
+        'long_title' => 'Ребра свиные',
         'image' => '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
         'nutrients' => ['p' => 24, 'f' => 35, 'c' => 21, 'e' => 472],

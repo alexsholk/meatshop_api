@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'categoryId' => 3,
+    'category_id' => 3,
     'id' => 303,
     'data' => [
         'title' => 'Спина',
-        'longTitle' => 'Спина (баранина)',
+        'long_title' => 'Спина (баранина)',
         'image' => '2.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],

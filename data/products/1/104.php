@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'categoryId' => 1,
+    'category_id' => 1,
     'id' => 104,
     'data' => [
         'title' => 'Грудинка',
-        'longTitle' => 'Грудинка свиная',
+        'long_title' => 'Грудинка свиная',
         'image' => '2.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque maiores mollitia nihil sint vero?',
         'nutrients' => ['p' => 23, 'f' => 34, 'c' => 28, 'e' => 435],

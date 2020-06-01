@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'categoryId' => 1,
+    'category_id' => 1,
     'id' => 106,
     'data' => [
         'title' => 'Лопатка',
-        'longTitle' => 'Лопатка свиная',
+        'long_title' => 'Лопатка свиная',
         'image' => '2.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],

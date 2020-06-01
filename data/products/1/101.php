@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'categoryId' => 1,
+    'category_id' => 1,
     'id' => 101,
     'data' => [
         'title' => 'Шея',
-        'longTitle' => 'Шея свиная',
+        'long_title' => 'Шея свиная',
         'image' => '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque odio nesciunt quibusdam, inventore quam maiores.',
         'nutrients' => ['p' => 24, 'f' => 35, 'c' => 21, 'e' => 472],

@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'categoryId' => 1,
+    'category_id' => 1,
     'id' => 102,
     'data' => [
         'title' => 'Корейка',
-        'longTitle' => 'Корейка свиная',
+        'long_title' => 'Корейка свиная',
         'image' => '2.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         'nutrients' => ['p' => 26, 'f' => 32, 'c' => 28, 'e' => 452],
