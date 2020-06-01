@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/helpers/helpers.php';
+
 return (function () {
     $products = [];
     foreach (new FilesystemIterator(__DIR__ . '/products') as $dir) {
