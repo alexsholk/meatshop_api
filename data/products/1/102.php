@@ -10,30 +10,106 @@ return [
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         'nutrients' => ['p' => 26, 'f' => 32, 'c' => 28, 'e' => 452],
         'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
+        // Опции товара
         'options' => [
-            'slicing' => [
+            [
+                'code' => 'slicing',
                 'title' => 'Нарезка',
                 'required' => true,
+                'exclusive' => true,
                 'values' => [
                     [
                         'title' => 'Отсутствует',
-                        'price' => 370, // Цена за кг
                         'image' => '2.jpg',
+                        'price_per_unit' => 370, // Цена за кг
+                        'unit' => 'кг',
+                        'options' => [
+                            [
+                                'code' => 'piece_size',
+                                'title' => 'Количество ребер',
+                                'required' => true,
+                                'exclusive' => true,
+                                'values' => [
+                                    [
+                                        'title' => '3',
+                                        'unit_multiplier' => .2,
+                                    ],
+                                    [
+                                        'title' => '6',
+                                        'unit_multiplier' => .4,
+                                    ],
+                                    [
+                                        'title' => '9',
+                                        'unit_multiplier' => .6,
+                                    ]
+                                ]
+                            ],
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ],
                     [
                         'title' => 'Стейк',
-                        'price' => 390, // 450
                         'image' => '2.jpg',
+                        'unit' => 'кг',
+                        'options' => [
+                            [
+                                'code' => 'piece_size',
+                                'title' => 'Тип',
+                                'required' => true,
+                                'exclusive' => true,
+                                'values' => [
+                                    [
+                                        'title' => 'Кость',
+                                        'price_per_unit' => 390,
+                                        'unit_multiplier' => .3
+                                    ],
+                                    [
+                                        'title' => 'Без кости',
+                                        'price_per_unit' => 450,
+                                        'unit_multiplier' => .2
+                                    ],
+                                ]
+                            ],
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ],
                     [
                         'title' => 'Куски',
-                        'price' => 450,
                         'image' => '2.jpg',
+                        'price_per_unit' => 450, // Цена за кг
+                        'unit' => 'кг',
+                        'options' => [
+                            [
+                                'code' => 'piece_size',
+                                'title' => 'Размер',
+                                'required' => true,
+                                'exclusive' => true,
+                                'values' => [
+                                    [
+                                        'title' => 'Большой',
+                                    ],
+                                    [
+                                        'title' => 'Средний',
+                                    ],
+                                    [
+                                        'title' => 'Малый',
+                                    ],
+                                ]
+                            ],
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ],
                     [
                         'title' => 'Фарш',
-                        'price' => 450,
                         'image' => '2.jpg',
+                        'price_per_unit' => 450, // Цена за кг
+                        'unit' => 'кг',
+                        'options' => [
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ]
                 ]
             ]

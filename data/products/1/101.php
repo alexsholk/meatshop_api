@@ -55,7 +55,7 @@ return [
                         'unit' => 'кг',
                         'options' => [
                             [
-                                'code' => 'thickness',
+                                'code' => 'piece_size',
                                 'title' => 'Толщина',
                                 'required' => true,
                                 'exclusive' => true,
@@ -85,7 +85,7 @@ return [
                         'unit' => 'кг',
                         'options' => [
                             [
-                                'code' => 'size',
+                                'code' => 'piece_size',
                                 'title' => 'Размер',
                                 'required' => true,
                                 'exclusive' => true,
