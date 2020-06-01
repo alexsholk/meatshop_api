@@ -3,7 +3,7 @@
 return [
     [
         'id' => 1,
-        'parentId' => null,
+        'parent_id' => null,
         'data' => [
             'slug' => 'pork',
             'title' => 'Свинина',
@@ -12,7 +12,7 @@ return [
     ],
     [
         'id' => 2,
-        'parentId' => null,
+        'parent_id' => null,
         'data' => [
             'slug' => 'beef',
             'title' => 'Говядина',
@@ -21,7 +21,7 @@ return [
     ],
     [
         'id' => 3,
-        'parentId' => null,
+        'parent_id' => null,
         'data' => [
             'slug' => 'mutton',
             'title' => 'Баранина',
@@ -30,7 +30,7 @@ return [
     ],
     [
         'id' => 4,
-        'parentId' => null,
+        'parent_id' => null,
         'data' => [
             'slug' => 'chicken',
             'title' => 'Курица',
@@ -39,7 +39,7 @@ return [
     ],
     [
         'id' => 5,
-        'parentId' => null,
+        'parent_id' => null,
         'data' => [
             'slug' => 'spices-and-sauces',
             'title' => 'Специи и соусы',
