@@ -19,23 +19,43 @@ return [
                 'values' => [
                     [
                         'title' => 'Большой кусок (Только кость)',
-                        'price' => 600, // Цена за кг
+                        'price_per_unit' => 600, // Цена за кг
                         'image' => '2.jpg',
+                        'unit' => 'кг',
+                        'options' => [
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ],
                     [
                         'title' => 'Пистолетики',
-                        'price' => 630,
+                        'price_per_unit' => 630,
                         'image' => '2.jpg',
+                        'unit' => 'кг',
+                        'options' => [
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ],
                     [
                         'title' => 'Куски (БК)',
-                        'price' => 0,
+                        'price_per_unit' => 0,
                         'image' => '2.jpg',
+                        'unit' => 'кг',
+                        'options' => [
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ],
                     [
                         'title' => 'Фарш',
-                        'price' => 0,
+                        'price_per_unit' => 0,
                         'image' => '2.jpg',
+                        'unit' => 'кг',
+                        'options' => [
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ]
                 ]
             ]

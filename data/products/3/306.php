@@ -19,23 +19,43 @@ return [
                 'values' => [
                     [
                         'title' => 'Большой кусок',
-                        'price' => 450, // Цена за кг
+                        'price_per_unit' => 450, // Цена за кг
                         'image' => '2.jpg',
+                        'unit' => 'кг',
+                        'options' => [
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ],
                     [
                         'title' => 'Ребра',
-                        'price' => 450,
+                        'price_per_unit' => 450,
                         'image' => '2.jpg',
+                        'unit' => 'кг',
+                        'options' => [
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ],
                     [
                         'title' => 'Куски',
-                        'price' => 0,
+                        'price_per_unit' => 0,
                         'image' => '2.jpg',
+                        'unit' => 'кг',
+                        'options' => [
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ],
                     [
                         'title' => 'Фарш',
-                        'price' => 0,
+                        'price_per_unit' => 0,
                         'image' => '2.jpg',
+                        'unit' => 'кг',
+                        'options' => [
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ]
                 ]
             ]

@@ -19,8 +19,13 @@ return [
                 'values' => [
                     [
                         'title' => 'Большой кусок',
-                        'price' => 165, // 190
+                        'price_per_unit' => 165, // 190
                         'image' => '2.jpg',
+                        'unit' => 'кг',
+                        'options' => [
+                            getMarinadeOption(generateRandomIntArray(6, 1, 20)),
+                            getSpiceOption(generateRandomIntArray(6, 1, 17)),
+                        ]
                     ],
                 ]
             ]
