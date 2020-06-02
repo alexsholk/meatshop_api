@@ -56,7 +56,7 @@ function getSpiceOption(array $ids)
         'title' => 'Специи',
         'required' => false,
         'exclusive' => true,
-        'values' => getMarinades($ids),
+        'values' => getSpices($ids),
     ];
 }
 
