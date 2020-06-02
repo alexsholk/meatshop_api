@@ -25,9 +25,9 @@ class ProductController
     public function list(Request $request)
     {
         $data = [];
-        if ($categoryId = $request->query->get('categoryId')) {
+        if ($categoryId = $request->query->get('category_id')) {
             foreach ($this->data as $product) {
-                if ($product['categoryId'] == $categoryId) {
+                if ($product['category_id'] == $categoryId) {
                     $data[] = $product;
                 }
             }
