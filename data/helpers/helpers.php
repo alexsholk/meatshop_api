@@ -1,6 +1,7 @@
 <?php
 
-function getAddons() {
+function getAddons()
+{
     static $addons;
     if (!$addons) {
         $addons = require_once __DIR__ . '/../product-addons.php';
@@ -11,12 +12,14 @@ function getAddons() {
 function getMarinades(array $ids)
 {
     $marinades = getAddons()['marinades'];
+    array_walk($marinades, function (&$item) {
+        $item['description'] = sprintf('<strong>Маринад "%s"</strong> Lorem ipsum dolor sit amet, consectetur 
+adipisicing elit. Enim, labore perferendis. Accusamus consequatur corporis culpa, hic ipsum libero neque velit.',
+            $item['title']
+        );
+    });
     if (empty($ids)) return $marinades;
     $out = [];
-    if (!is_array($marinades)) {
-        dump($marinades);
-        die;
-    }
     foreach ($marinades as $marinade) {
         if (in_array($marinade['id'], $ids)) {
             $out[] = $marinade;
@@ -28,6 +31,12 @@ function getMarinades(array $ids)
 function getSpices(array $ids)
 {
     $spices = getAddons()['spices'];
+    array_walk($spices, function (&$item) {
+        $item['description'] = sprintf('<strong>Специя "%s"</strong> Lorem ipsum dolor sit amet, consectetur 
+adipisicing elit. Enim, labore perferendis. Accusamus consequatur corporis culpa, hic ipsum libero neque velit.',
+            $item['title']
+        );
+    });
     if (empty($ids)) return $spices;
     $out = [];
     foreach ($spices as $spice) {
