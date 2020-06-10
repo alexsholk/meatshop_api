@@ -5,7 +5,6 @@ return [
     'id' => 103,
     'data' => [
         'title' => 'Окорок мякоть',
-        'long_title' => 'Окорок свиной',
         'image' => '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, facere, nulla.',
         'nutrients' => ['p' => 22, 'f' => 37, 'c' => 25, 'e' => 460],

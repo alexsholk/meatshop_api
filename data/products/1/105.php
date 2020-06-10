@@ -5,7 +5,6 @@ return [
     'id' => 105,
     'data' => [
         'title' => 'Ребра',
-        'long_title' => 'Ребра свиные',
         'image' => '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
         'nutrients' => ['p' => 24, 'f' => 35, 'c' => 21, 'e' => 472],

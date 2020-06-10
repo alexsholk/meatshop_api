@@ -5,7 +5,6 @@ return [
     'id' => 102,
     'data' => [
         'title' => 'Корейка',
-        'long_title' => 'Корейка свиная',
         'image' => '2.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         'nutrients' => ['p' => 26, 'f' => 32, 'c' => 28, 'e' => 452],

@@ -5,7 +5,6 @@ return [
     'id' => 302,
     'data' => [
         'title' => 'Корейка',
-        'long_title' => 'Корейка (баранина)',
         'image' => '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],

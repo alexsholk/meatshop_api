@@ -5,7 +5,6 @@ return [
     'id' => 101,
     'data' => [
         'title' => 'Шея',
-        //'long_title' => 'Шея свиная',
         'image' => '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque odio nesciunt quibusdam, inventore quam maiores.',
         //'nutrients' => ['p' => 24, 'f' => 35, 'c' => 21, 'e' => 472],

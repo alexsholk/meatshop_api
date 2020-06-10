@@ -5,7 +5,6 @@ return [
     'id' => 403,
     'data' => [
         'title' => 'Крылья',
-        'long_title' => 'Крылья (курица)',
         'image' => '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'nutrients' => ['p' => 21, 'f' => 28, 'c' => 18, 'e' => 430],
