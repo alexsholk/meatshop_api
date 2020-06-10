@@ -15,11 +15,10 @@ return [
                 'code' => 'slicing',
                 'title' => 'Нарезка',
                 'required' => true,
-                'exclusive' => true,
                 'values' => [
                     [
                         'title' => 'Большой кусок',
-                        'price_per_unit' => 165, // 190
+                        'price' => 165, // 190
                         'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [

@@ -15,19 +15,17 @@ return [
                 'code' => 'slicing',
                 'title' => 'Нарезка',
                 'required' => true,
-                'exclusive' => true,
                 'values' => [
                     [
                         'title' => 'Отсутствует',
                         'image' => '2.jpg',
-                        'price_per_unit' => 340, // Цена за кг
+                        'price' => 340, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
                             [
                                 'code' => 'piece_size',
                                 'title' => 'Размер куска',
                                 'required' => true,
-                                'exclusive' => true,
                                 'values' => [
                                     [
                                         'title' => 'Крупный (3кг)',
@@ -49,7 +47,7 @@ return [
                     [
                         'title' => 'Бекон',
                         'image' => '2.jpg',
-                        'price_per_unit' => 360, // Цена за кг
+                        'price' => 360, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
                             getSpiceOption(generateRandomIntArray(6, 1, 17)),
@@ -58,14 +56,13 @@ return [
                     [
                         'title' => 'Куски',
                         'image' => '2.jpg',
-                        'price_per_unit' => 360, // Цена за кг
+                        'price' => 360, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
                             [
                                 'code' => 'piece_size',
                                 'title' => 'Размер',
                                 'required' => true,
-                                'exclusive' => true,
                                 'values' => [
                                     [
                                         'title' => 'Большой',
@@ -84,7 +81,7 @@ return [
                     [
                         'title' => 'Фарш',
                         'image' => '2.jpg',
-                        'price_per_unit' => 360, // Цена за кг
+                        'price' => 360, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
                             getSpiceOption(generateRandomIntArray(6, 1, 17)),

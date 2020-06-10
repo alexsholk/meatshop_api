@@ -16,19 +16,17 @@ return [
                 'code' => 'slicing',
                 'title' => 'Нарезка',
                 'required' => true,
-                'exclusive' => true,
                 'values' => [
                     [
                         'title' => 'Отсутствует',
                         'image' => '2.jpg',
-                        'price_per_unit' => 370, // Цена за кг
+                        'price' => 370, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
                             [
                                 'code' => 'piece_size',
-                                'title' => 'Количество ребер',
+                                'title' => 'Кол-во ребер',
                                 'required' => true,
-                                'exclusive' => true,
                                 'values' => [
                                     [
                                         'title' => '3',
@@ -57,16 +55,15 @@ return [
                                 'code' => 'piece_size',
                                 'title' => 'Тип',
                                 'required' => true,
-                                'exclusive' => true,
                                 'values' => [
                                     [
                                         'title' => 'Кость',
-                                        'price_per_unit' => 390,
+                                        'price' => 390,
                                         'unit_multiplier' => .3
                                     ],
                                     [
                                         'title' => 'Без кости',
-                                        'price_per_unit' => 450,
+                                        'price' => 450,
                                         'unit_multiplier' => .2
                                     ],
                                 ]
@@ -78,14 +75,13 @@ return [
                     [
                         'title' => 'Куски',
                         'image' => '2.jpg',
-                        'price_per_unit' => 450, // Цена за кг
+                        'price' => 450, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
                             [
                                 'code' => 'piece_size',
                                 'title' => 'Размер',
                                 'required' => true,
-                                'exclusive' => true,
                                 'values' => [
                                     [
                                         'title' => 'Большой',
@@ -105,7 +101,7 @@ return [
                     [
                         'title' => 'Фарш',
                         'image' => '2.jpg',
-                        'price_per_unit' => 450, // Цена за кг
+                        'price' => 450, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
                             getSpiceOption(generateRandomIntArray(6, 1, 17)),

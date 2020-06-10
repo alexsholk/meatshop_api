@@ -15,11 +15,10 @@ return [
                 'code' => 'slicing',
                 'title' => 'Нарезка',
                 'required' => true,
-                'exclusive' => true,
                 'values' => [
                     [
                         'title' => 'Большой кусок (Только кость)',
-                        'price_per_unit' => 600, // Цена за кг
+                        'price' => 600, // Цена за кг
                         'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
@@ -29,7 +28,7 @@ return [
                     ],
                     [
                         'title' => 'Пистолетики',
-                        'price_per_unit' => 630,
+                        'price' => 630,
                         'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
@@ -39,7 +38,7 @@ return [
                     ],
                     [
                         'title' => 'Куски (БК)',
-                        'price_per_unit' => 0,
+                        'price' => 0,
                         'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
@@ -49,7 +48,7 @@ return [
                     ],
                     [
                         'title' => 'Фарш',
-                        'price_per_unit' => 0,
+                        'price' => 0,
                         'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
