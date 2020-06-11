@@ -5,6 +5,7 @@ return [
     'id' => 105,
     'data' => [
         'title' => 'Ребра',
+        'image' => IMAGE_DIR . '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
         'price' => 370, // Цена за кг
         'unit' => 'кг',

@@ -14,7 +14,7 @@ return [
                 'required' => true,
                 'values' => [
                     [
-                        'title' => 'Большой кусок (Только кость)',
+                        'title' => 'Большой кусок',
                         'price' => 600, // Цена за кг
                         'unit' => 'кг',
                         'options' => [

@@ -14,7 +14,7 @@ return [
                 'required' => true,
                 'values' => [
                     [
-                        'title' => 'Большой кусок (только кость)',
+                        'title' => 'Большой кусок',
                         'price' => 230,
                         'unit' => 'кг',
                         'options' => [
