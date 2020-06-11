@@ -17,6 +17,7 @@ return [
                         'title' => 'Отсутствует',
                         'price' => 350, // Цена за кг
                         'unit' => 'кг',
+                        'input_type' => 'count',
                         'options' => [
                             [
                                 'code' => 'piece_size',
@@ -45,6 +46,7 @@ return [
                         'title' => 'Стейк',
                         'price' => 390, // Цена за кг
                         'unit' => 'кг',
+                        'input_type' => 'count',
                         'options' => [
                             [
                                 'code' => 'piece_size',
@@ -73,6 +75,7 @@ return [
                         'title' => 'Куски',
                         'price' => 390, // Цена за кг
                         'unit' => 'кг',
+                        'input_type' => 'weight',
                         'options' => [
                             [
                                 'code' => 'piece_size',
@@ -98,6 +101,7 @@ return [
                         'title' => 'Фарш',
                         'price' => 390, // Цена за кг
                         'unit' => 'кг',
+                        'input_type' => 'weight',
                         'options' => [
                             getSpiceOption(generateRandomIntArray(6, 1, 17)),
                         ]

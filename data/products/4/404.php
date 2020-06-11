@@ -17,6 +17,7 @@ return [
                         'title' => 'Большой кусок',
                         'price' => 230,
                         'unit' => 'кг',
+                        'input_type' => 'weight',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
                             getSpiceOption(generateRandomIntArray(6, 1, 17)),
@@ -26,6 +27,7 @@ return [
                         'title' => 'Филе',
                         'price' => 280,
                         'unit' => 'кг',
+                        'input_type' => 'weight',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
                             getSpiceOption(generateRandomIntArray(6, 1, 17)),
@@ -35,6 +37,7 @@ return [
                         'title' => 'Куски',
                         'price' => 290,
                         'unit' => 'кг',
+                        'input_type' => 'weight',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
                             getSpiceOption(generateRandomIntArray(6, 1, 17)),
@@ -44,6 +47,7 @@ return [
                         'title' => 'Фарш',
                         'price' => 290,
                         'unit' => 'кг',
+                        'input_type' => 'weight',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
                             getSpiceOption(generateRandomIntArray(6, 1, 17)),

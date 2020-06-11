@@ -17,6 +17,7 @@ return [
                         'title' => 'Большой кусок',
                         'price' => 165,
                         'unit' => 'кг',
+                        'input_type' => 'weight',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
                             getSpiceOption(generateRandomIntArray(6, 1, 17)),

@@ -9,6 +9,7 @@ return [
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
         'price' => 370, // Цена за кг
         'unit' => 'кг',
+        'input_type' => 'count',
         'options' => [
             [
                 'code' => 'piece_size',

@@ -9,6 +9,7 @@ return [
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'price' => 180,
         'unit' => 'кг',
+        'input_type' => 'weight',
         'options' => [
             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
             getSpiceOption(generateRandomIntArray(6, 1, 17)),
