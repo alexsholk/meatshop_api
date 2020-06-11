@@ -7,8 +7,6 @@ return [
         'title' => 'Корейка',
         'image' => '2.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        'nutrients' => ['p' => 26, 'f' => 32, 'c' => 28, 'e' => 452],
-        'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
         // Опции товара
         'options' => [
             [

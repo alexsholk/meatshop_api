@@ -7,8 +7,6 @@ return [
         'title' => 'Грудинка',
         'image' => '2.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque maiores mollitia nihil sint vero?',
-        'nutrients' => ['p' => 23, 'f' => 34, 'c' => 28, 'e' => 435],
-        'props' => ['Удельный вес тканей', 'Жировая ткань: 5\10', 'Мышечное волокно: 4\10', 'Соединительная ткань: 1\10', 'Кости: 2\10'],
         'options' => [
             [
                 'code' => 'slicing',
