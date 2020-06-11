@@ -18,15 +18,15 @@ return [
                 'values' => [
                     [
                         'title' => '3',
-                        'unit_multiplier' => .2,
+                        'weight' => 200,
                     ],
                     [
                         'title' => '6',
-                        'unit_multiplier' => .4,
+                        'weight' => 400,
                     ],
                     [
                         'title' => '9',
-                        'unit_multiplier' => .6,
+                        'weight' => 600,
                     ]
                 ]
             ],

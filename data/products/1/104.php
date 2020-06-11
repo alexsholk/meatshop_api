@@ -26,15 +26,15 @@ return [
                                 'values' => [
                                     [
                                         'title' => 'Крупный (3кг)',
-                                        'unit_multiplier' => 3.0,
+                                        'weight' => 3000,
                                     ],
                                     [
                                         'title' => 'Средний (2кг)',
-                                        'unit_multiplier' => 2.0,
+                                        'weight' => 2000,
                                     ],
                                     [
                                         'title' => 'Малый (1.5кг)',
-                                        'unit_multiplier' => 1.5,
+                                        'weight' => 1500,
                                     ]
                                 ]
                             ],

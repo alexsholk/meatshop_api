@@ -27,15 +27,15 @@ return [
                                 'values' => [
                                     [
                                         'title' => 'Крупный (2кг)',
-                                        'unit_multiplier' => 2.0,
+                                        'weight' => 2000,
                                     ],
                                     [
                                         'title' => 'Средний (1.4кг)',
-                                        'unit_multiplier' => 1.4,
+                                        'weight' => 1400,
                                     ],
                                     [
                                         'title' => 'Малый (900гр)',
-                                        'unit_multiplier' => .9,
+                                        'weight' => 900,
                                     ]
                                 ]
                             ],
@@ -56,15 +56,15 @@ return [
                                 'values' => [
                                     [
                                         'title' => 'Толстый',
-                                        'unit_multiplier' => .3,
+                                        'weight' => 300,
                                     ],
                                     [
                                         'title' => 'Средний',
-                                        'unit_multiplier' => .2,
+                                        'weight' => 200,
                                     ],
                                     [
                                         'title' => 'Тонкий',
-                                        'unit_multiplier' => .1,
+                                        'weight' => 100,
                                     ],
                                 ]
                             ],
