@@ -5,7 +5,7 @@ return [
     'id' => 401,
     'data' => [
         'title' => 'Целиком',
-        'image' => '1.jpg',
+        'image' => IMAGE_DIR . '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'price' => 180,
         'unit' => 'кг',

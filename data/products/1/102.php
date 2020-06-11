@@ -5,7 +5,7 @@ return [
     'id' => 102,
     'data' => [
         'title' => 'Корейка',
-        'image' => '2.jpg',
+        'image' => IMAGE_DIR . '2.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         // Опции товара
         'options' => [
@@ -16,7 +16,6 @@ return [
                 'values' => [
                     [
                         'title' => 'Отсутствует',
-                        'image' => '2.jpg',
                         'price' => 370, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
@@ -45,7 +44,6 @@ return [
                     ],
                     [
                         'title' => 'Стейк',
-                        'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
                             [
@@ -71,7 +69,6 @@ return [
                     ],
                     [
                         'title' => 'Куски',
-                        'image' => '2.jpg',
                         'price' => 450, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
@@ -97,7 +94,6 @@ return [
                     ],
                     [
                         'title' => 'Фарш',
-                        'image' => '2.jpg',
                         'price' => 450, // Цена за кг
                         'unit' => 'кг',
                         'options' => [

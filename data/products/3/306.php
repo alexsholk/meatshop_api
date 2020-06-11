@@ -5,7 +5,7 @@ return [
     'id' => 306,
     'data' => [
         'title' => 'Грудинка/Ребра',
-        'image' => '1.jpg',
+        'image' => IMAGE_DIR . '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'options' => [
             [
@@ -16,7 +16,6 @@ return [
                     [
                         'title' => 'Большой кусок',
                         'price' => 450, // Цена за кг
-                        'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
@@ -26,7 +25,6 @@ return [
                     [
                         'title' => 'Ребра',
                         'price' => 450,
-                        'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
@@ -35,8 +33,7 @@ return [
                     ],
                     [
                         'title' => 'Куски',
-                        'price' => 0,
-                        'image' => '2.jpg',
+                        'price' => 450,
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
@@ -45,8 +42,7 @@ return [
                     ],
                     [
                         'title' => 'Фарш',
-                        'price' => 0,
-                        'image' => '2.jpg',
+                        'price' => 440,
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),

@@ -5,7 +5,7 @@ return [
     'id' => 202,
     'data' => [
         'title' => 'Корейка',
-        'image' => '2.jpg',
+        'image' => IMAGE_DIR . '2.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'options' => [
             [
@@ -16,7 +16,7 @@ return [
                     [
                         'title' => 'Большой кусок (Только кость)',
                         'price' => 530, // Цена за кг
-                        'image' => '2.jpg','unit' => 'кг',
+                        'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
                             getSpiceOption(generateRandomIntArray(6, 1, 17)),
@@ -25,7 +25,6 @@ return [
                     [
                         'title' => 'Мякоть шеи',
                         'price' => 550, // 580
-                        'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
@@ -35,7 +34,6 @@ return [
                     [
                         'title' => 'Куски (БК)',
                         'price' => 580,
-                        'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
@@ -45,7 +43,6 @@ return [
                     [
                         'title' => 'Фарш',
                         'price' => 580,
-                        'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),

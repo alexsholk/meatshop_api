@@ -1,5 +1,7 @@
 <?php
 
+const IMAGE_DIR = '/uploads/';
+
 function getAddons()
 {
     static $addons;

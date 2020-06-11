@@ -5,7 +5,7 @@ return [
     'id' => 103,
     'data' => [
         'title' => 'Окорок мякоть',
-        'image' => '1.jpg',
+        'image' => IMAGE_DIR . '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, facere, nulla.',
         'options' => [
             [
@@ -15,7 +15,6 @@ return [
                 'values' => [
                     [
                         'title' => 'Отсутствует',
-                        'image' => '2.jpg',
                         'price' => 450, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
@@ -44,7 +43,6 @@ return [
                     ],
                     [
                         'title' => 'Стейк',
-                        'image' => '2.jpg',
                         'price' => 460, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
@@ -73,7 +71,6 @@ return [
                     ],
                     [
                         'title' => 'Куски',
-                        'image' => '2.jpg',
                         'price' => 460, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
@@ -99,7 +96,6 @@ return [
                     ],
                     [
                         'title' => 'Фарш',
-                        'image' => '2.jpg',
                         'price' => 460, // Цена за кг
                         'unit' => 'кг',
                         'options' => [

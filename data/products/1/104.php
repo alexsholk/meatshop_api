@@ -5,7 +5,7 @@ return [
     'id' => 104,
     'data' => [
         'title' => 'Грудинка',
-        'image' => '2.jpg',
+        'image' => IMAGE_DIR . '2.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque maiores mollitia nihil sint vero?',
         'options' => [
             [
@@ -15,7 +15,6 @@ return [
                 'values' => [
                     [
                         'title' => 'Отсутствует',
-                        'image' => '2.jpg',
                         'price' => 340, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
@@ -43,7 +42,6 @@ return [
                     ],
                     [
                         'title' => 'Бекон',
-                        'image' => '2.jpg',
                         'price' => 360, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
@@ -52,7 +50,6 @@ return [
                     ],
                     [
                         'title' => 'Куски',
-                        'image' => '2.jpg',
                         'price' => 360, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
@@ -77,7 +74,6 @@ return [
                     ],
                     [
                         'title' => 'Фарш',
-                        'image' => '2.jpg',
                         'price' => 360, // Цена за кг
                         'unit' => 'кг',
                         'options' => [

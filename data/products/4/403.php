@@ -5,7 +5,7 @@ return [
     'id' => 403,
     'data' => [
         'title' => 'Крылья',
-        'image' => '1.jpg',
+        'image' => IMAGE_DIR . '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'options' => [
             [
@@ -15,8 +15,7 @@ return [
                 'values' => [
                     [
                         'title' => 'Большой кусок',
-                        'price' => 165, // 190
-                        'image' => '2.jpg',
+                        'price' => 165,
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),

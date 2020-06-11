@@ -5,7 +5,7 @@ return [
     'id' => 205,
     'data' => [
         'title' => 'Мякоть. Яблочко',
-        'image' => '1.jpg',
+        'image' => IMAGE_DIR . '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'options' => [
             [
@@ -16,7 +16,6 @@ return [
                     [
                         'title' => 'Большой кусок',
                         'price' => 700, // Цена за кг
-                        'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
@@ -26,7 +25,6 @@ return [
                     [
                         'title' => 'Стейк',
                         'price' => 750,
-                        'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
@@ -36,7 +34,6 @@ return [
                     [
                         'title' => 'Куски',
                         'price' => 750,
-                        'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),
@@ -46,7 +43,6 @@ return [
                     [
                         'title' => 'Фарш',
                         'price' => 750,
-                        'image' => '2.jpg',
                         'unit' => 'кг',
                         'options' => [
                             getMarinadeOption(generateRandomIntArray(6, 1, 20)),

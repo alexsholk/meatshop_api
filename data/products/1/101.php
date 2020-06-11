@@ -5,7 +5,7 @@ return [
     'id' => 101,
     'data' => [
         'title' => 'Шея',
-        'image' => '1.jpg',
+        'image' => IMAGE_DIR . '1.jpg',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque odio nesciunt quibusdam, inventore quam maiores.',
         // Опции товара
         'options' => [
@@ -16,7 +16,6 @@ return [
                 'values' => [
                     [
                         'title' => 'Большой кусок',
-                        'image' => '2.jpg',
                         'price' => 540, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
@@ -45,7 +44,6 @@ return [
                     ],
                     [
                         'title' => 'Стейк',
-                        'image' => '1.jpg',
                         'price' => 550, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
@@ -74,7 +72,6 @@ return [
                     ],
                     [
                         'title' => 'Куски',
-                        'image' => '2.jpg',
                         'price' => 550, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
@@ -100,7 +97,6 @@ return [
                     ],
                     [
                         'title' => 'Фарш',
-                        'image' => '2.jpg',
                         'price' => 550, // Цена за кг
                         'unit' => 'кг',
                         'options' => [
