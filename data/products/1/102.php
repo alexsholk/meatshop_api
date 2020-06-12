@@ -10,7 +10,6 @@ return [
         // Опции товара
         'options' => [
             [
-                'code' => 'slicing',
                 'title' => 'Нарезка',
                 'required' => true,
                 'values' => [
@@ -21,7 +20,6 @@ return [
                         'input_type' => 'count',
                         'options' => [
                             [
-                                'code' => 'piece_size',
                                 'title' => 'Кол-во ребер',
                                 'required' => true,
                                 'values' => [
@@ -49,7 +47,6 @@ return [
                         'input_type' => 'count',
                         'options' => [
                             [
-                                'code' => 'piece_size',
                                 'title' => 'Тип',
                                 'required' => true,
                                 'values' => [
@@ -76,7 +73,6 @@ return [
                         'input_type' => 'weight',
                         'options' => [
                             [
-                                'code' => 'piece_size',
                                 'title' => 'Размер',
                                 'required' => true,
                                 'values' => [

@@ -12,7 +12,6 @@ return [
         'input_type' => 'count',
         'options' => [
             [
-                'code' => 'piece_size',
                 'title' => 'Кол-во ребер',
                 'required' => true,
                 'values' => [

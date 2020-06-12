@@ -10,7 +10,6 @@ return [
         // Опции товара
         'options' => [
             [
-                'code' => 'slicing',
                 'title' => 'Нарезка',
                 'required' => true,
                 'values' => [
@@ -21,7 +20,6 @@ return [
                         'input_type' => 'count',
                         'options' => [
                             [
-                                'code' => 'piece_size',
                                 'title' => 'Размер куска',
                                 'required' => true,
                                 'values' => [
@@ -50,7 +48,6 @@ return [
                         'input_type' => 'count',
                         'options' => [
                             [
-                                'code' => 'piece_size',
                                 'title' => 'Толщина',
                                 'required' => true,
                                 'values' => [
@@ -79,7 +76,6 @@ return [
                         'input_type' => 'weight',
                         'options' => [
                             [
-                                'code' => 'piece_size',
                                 'title' => 'Размер',
                                 'required' => true,
                                 'values' => [

@@ -9,7 +9,6 @@ return [
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eveniet id iste, omnis possimus velit vitae.',
         'options' => [
             [
-                'code' => 'slicing',
                 'title' => 'Нарезка',
                 'required' => true,
                 'values' => [
