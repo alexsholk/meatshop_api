@@ -52,10 +52,9 @@ adipisicing elit. Enim, labore perferendis. Accusamus consequatur corporis culpa
 function getMarinadeOption(array $ids)
 {
     return [
-        'code' => 'marinade',
         'title' => 'Маринад',
         'required' => false,
-        'exclusive' => true,
+        'mutually_exclusive' => 1,
         'values' => getMarinades($ids),
     ];
 }
@@ -63,10 +62,9 @@ function getMarinadeOption(array $ids)
 function getSpiceOption(array $ids)
 {
     return [
-        'code' => 'spice',
         'title' => 'Специи',
         'required' => false,
-        'exclusive' => true,
+        'mutually_exclusive' => 1,
         'values' => getSpices($ids),
     ];
 }
