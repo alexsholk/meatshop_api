@@ -35,8 +35,6 @@ class ProductController
             $data = $this->data;
         }
 
-        $response = new JsonResponse($data, Response::HTTP_OK);
-        $response->headers->set('Access-Control-Allow-Origin', '*');
-        return $response;
+        return new JsonResponse($data, Response::HTTP_OK);
     }
 }

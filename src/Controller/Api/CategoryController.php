@@ -23,8 +23,6 @@ class CategoryController
      */
     public function list()
     {
-        $response = new JsonResponse($this->data, Response::HTTP_OK);
-        $response->headers->set('Access-Control-Allow-Origin', '*');
-        return $response;
+        return new JsonResponse($this->data, Response::HTTP_OK);
     }
 }

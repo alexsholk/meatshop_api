@@ -36,9 +36,7 @@ class StaticPageController
             $data = $this->data;
         }
 
-        $response = new JsonResponse($data, Response::HTTP_OK);
-        $response->headers->set('Access-Control-Allow-Origin', '*');
-        return $response;
+        return new JsonResponse($data, Response::HTTP_OK);
     }
 
     /**
@@ -55,8 +53,6 @@ class StaticPageController
             }
         }
 
-        $response = new JsonResponse($data, $data ? Response::HTTP_OK : Response::HTTP_NOT_FOUND);
-        $response->headers->set('Access-Control-Allow-Origin', '*');
-        return $response;
+        return new JsonResponse($data, $data ? Response::HTTP_OK : Response::HTTP_NOT_FOUND);
     }
 }
