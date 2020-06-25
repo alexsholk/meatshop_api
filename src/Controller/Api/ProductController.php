@@ -12,11 +12,13 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ProductController
 {
+    const FILEPATH = __DIR__ . '/../../../data/json/products.json';
+
     private $data;
 
     public function __construct()
     {
-        $this->data = require __DIR__ . '/../../../data/products.php';
+        $this->data = json_decode(file_get_contents(self::FILEPATH), true);
     }
 
     /**

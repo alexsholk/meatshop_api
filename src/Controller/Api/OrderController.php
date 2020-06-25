@@ -17,7 +17,7 @@ class OrderController
      */
     public function create(Request $request)
     {
-        file_put_contents(__DIR__ . '/../../../data/orders/order.txt', $request->getContent(false));
+        file_put_contents(__DIR__ . '/../../../data/orders/order.json', $request->getContent(false));
         return new JsonResponse(null, Response::HTTP_OK);
     }
 }

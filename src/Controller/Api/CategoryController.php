@@ -2,7 +2,6 @@
 
 namespace App\Controller\Api;
 
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -11,18 +10,13 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class CategoryController
 {
-    private $data;
-
-    public function __construct()
-    {
-        $this->data = require __DIR__ . '/../../../data/categories.php';
-    }
+    const FILEPATH = __DIR__ . '/../../../data/json/categories.json';
 
     /**
      * @Route("", methods={"GET"})
      */
     public function list()
     {
-        return new JsonResponse($this->data, Response::HTTP_OK);
+        return new Response(file_get_contents(self::FILEPATH), Response::HTTP_OK);
     }
 }
