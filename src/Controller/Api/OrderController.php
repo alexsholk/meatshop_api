@@ -17,7 +17,12 @@ class OrderController
      */
     public function create(Request $request)
     {
-        file_put_contents(__DIR__ . '/../../../data/orders/order.json', $request->getContent(false));
+        $filename = date('Y_m_d_H_i') . '.json';
+
+        file_put_contents(
+            __DIR__ . '/../../../data/orders/' . $filename,
+            $request->getContent(false)
+        );
         return new JsonResponse(null, Response::HTTP_OK);
     }
 }
