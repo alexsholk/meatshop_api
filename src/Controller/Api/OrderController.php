@@ -47,4 +47,26 @@ class OrderController
         );
         return new JsonResponse(null, Response::HTTP_OK);
     }
+
+    /**
+     * @Route("/test", methods={"GET"})
+     */
+    public function test(MailerInterface $mailer)
+    {
+        $mail = (new TemplatedEmail())
+            ->from('shop@miloveat.ru')
+            ->to('alexsholk@yandex.by')
+            //->cc('cc@example.com')
+            //->bcc('bcc@example.com')
+            //->replyTo('fabien@example.com')
+            ->priority(Email::PRIORITY_HIGH)
+            ->subject('Заказ')
+            ->htmlTemplate('emails/order.html.twig')
+            ->context([
+            ]);
+
+        $mailer->send($mail);
+
+        die('ok');
+    }
 }
