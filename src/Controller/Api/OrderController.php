@@ -20,9 +20,8 @@ class OrderController
      */
     public function create(Request $request, MailerInterface $mailer)
     {
+        /*
         $data = json_decode($request->getContent(false), true);
-
-
         $mail = (new TemplatedEmail())
             ->from('order@miloveat.ru')
             ->to('alexsholk@yandex.by')
@@ -38,6 +37,7 @@ class OrderController
             ]);
 
         $mailer->send($mail);
+        */
 
         $filename = date('Y_m_d_H_i') . '.json';
 
