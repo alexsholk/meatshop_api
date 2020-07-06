@@ -88,6 +88,85 @@ class Product implements \JsonSerializable, CanCreateFromArray
         }
     }
 
+    public function getCurrentPrice()
+    {
+        $price = $this->price;
+        foreach ($this->getCurrentOptions() as $option) {
+            /** @var ProductOption $option */
+            if ($optionValue = $option->getCurrentOptionValue()) {
+                if ($optionValue->getPrice()) {
+                    $price = $optionValue->getPrice();
+                }
+            }
+        }
+        return $price;
+    }
+
+    public function getCurrentInputType()
+    {
+        $inputType = $this->inputType;
+        foreach ($this->getCurrentOptions() as $option) {
+            /** @var ProductOption $option */
+            if ($optionValue = $option->getCurrentOptionValue()) {
+                if ($optionValue->getInputType()) {
+                    $inputType = $optionValue->getInputType();
+                }
+            }
+        }
+        return $inputType;
+    }
+
+    public function getCurrentPieceWeight()
+    {
+        $weight = null;
+        foreach ($this->getCurrentOptions() as $option) {
+            /** @var ProductOption $option */
+            if ($optionValue = $option->getCurrentOptionValue()) {
+                if ($optionValue->getWeight()) {
+                    $weight = $optionValue->getWeight();
+                }
+            }
+        }
+        return $weight;
+    }
+
+    public function getBaseCost()
+    {
+        if (!$this->getQuantity()) {
+            return null;
+        }
+        $amount = $this->getQuantity()->getAmount();
+
+        $price = $this->getCurrentPrice();
+        switch ($this->getCurrentInputType()) {
+            case InputType::INPUT_TYPE_WEIGHT:
+                return $price * $amount / 1000;
+            case InputType::INPUT_TYPE_COUNT:
+                return $price * $amount * $this->getCurrentPieceWeight() / 1000;
+        }
+
+        return null;
+    }
+
+    public function getAddonsCost()
+    {
+        $addonsCost = 0;
+        foreach ($this->getCurrentOptions() as $option) {
+            /** @var ProductOption $option */
+            if ($optionValue = $option->getCurrentOptionValue()) {
+                if ($optionValue->getPriceMultiplier()) {
+                    $addonsCost += $this->getBaseCost() * $optionValue->getPriceMultiplier();
+                }
+            }
+        }
+        return $addonsCost;
+    }
+
+    public function getTotalCost()
+    {
+        return $this->getBaseCost() + $this->getAddonsCost();
+    }
+
     /** Setters */
 
     public function setCategoryId($id)

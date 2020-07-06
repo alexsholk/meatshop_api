@@ -70,11 +70,16 @@ class OrderController
         $product = Product::createFromArray($data['cart'][0]);
 
         dump($product->getQuantity());
-
+        dump($product->getCurrentPrice());
+        dump($product->getBaseCost());
+        dump($product->getAddonsCost());
+        dump($product->getTotalCost());
         foreach ($product->getCurrentOptions() as $option) {
             /** @var ProductOption $option */
             $optionValue = $option->getCurrentOptionValue();
-            echo $option->getTitle() . ' - ' . ($optionValue ? $optionValue->getTitle() : 'не выбран') . '<br>';
+            echo $option->getTitle() . ' - ' . ($optionValue ? $optionValue->getTitle() : 'не выбран') .
+
+                '<br>';
         }
 
         die ('ok');
