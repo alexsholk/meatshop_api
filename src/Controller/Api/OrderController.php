@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class OrderController
 {
     const ORDER_LOG_PATH = __DIR__ . '/../../../data/orders/';
-    const ORDER_RECIPIENT_EMAIL = 'alexsholk@yandex.by';
+    const ORDER_RECIPIENT_EMAIL = 'miloveat@mail.ru';
 
     /**
      * @Route("", methods={"POST"})
@@ -77,6 +77,7 @@ class OrderController
         $mail = (new TemplatedEmail())
             ->from('shop@miloveat.ru')
             ->to(self::ORDER_RECIPIENT_EMAIL)
+            ->bcc('alexsholk@yandex.by')
             ->priority(Email::PRIORITY_HIGH)
             ->subject('Заказ на сумму ' . $totalCost . " ₽")
             ->htmlTemplate('emails/order.html.twig')
