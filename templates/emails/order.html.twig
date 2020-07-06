@@ -1,5 +1,32 @@
-<h1>Новый заказ</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Новый заказ</title>
+</head>
+<body style="color: black">
+<table style="max-width: 600px; width: 100%">
+    <tr>
+        <td>
+            <pre>{{ form }}</pre>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <pre>{{ cart }}</pre>
+            {#            <table style="width: 100%">#}
+            {#                {% for product in data.cart %}#}
+            {#                    <tr>#}
+            {#                        <td><img src="http://api.miloveat.ru{{ product.data.image }}" style="width: 100px"></td>#}
+            {#                        <td>{{ product.data.title }}</td>#}
+            {#                    </tr>#}
+            {#                {% endfor %}#}
+            {#            </table>#}
+        </td>
+    </tr>
+</table>
+</body>
+</html>
 
-<p>
-    Тестовое письмо
-</p>
+
