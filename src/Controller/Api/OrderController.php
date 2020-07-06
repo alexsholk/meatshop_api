@@ -3,6 +3,7 @@
 namespace App\Controller\Api;
 
 use App\Model\Product;
+use App\Model\ProductOption;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -68,8 +69,15 @@ class OrderController
 
         $product = Product::createFromArray($data['cart'][0]);
 
-        dump($product);
-        die;
+        dump($product->getQuantity());
+
+        foreach ($product->getCurrentOptions() as $option) {
+            /** @var ProductOption $option */
+            $optionValue = $option->getCurrentOptionValue();
+            echo $option->getTitle() . ' - ' . ($optionValue ? $optionValue->getTitle() : 'не выбран') . '<br>';
+        }
+
+        die ('ok');
 
         //$this->sendOrderEmail($data, $mailer);
 

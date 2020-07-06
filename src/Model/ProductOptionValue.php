@@ -59,6 +59,13 @@ class ProductOptionValue implements \JsonSerializable, CanCreateFromArray
         return $this->options[$title];
     }
 
+    public function getOptions()
+    {
+        foreach ($this->options as $option) {
+            yield $option;
+        }
+    }
+
     /** Setters */
 
     public function setTitle($title)

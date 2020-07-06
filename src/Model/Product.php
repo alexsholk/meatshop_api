@@ -14,6 +14,7 @@ class Product implements \JsonSerializable, CanCreateFromArray
     private $price;
     private $unit;
     private $inputType;
+    private $quantity;
     private $options = [];
 
     /** Getters */
@@ -58,6 +59,11 @@ class Product implements \JsonSerializable, CanCreateFromArray
         return $this->inputType;
     }
 
+    public function getQuantity(): ?Quantity
+    {
+        return $this->quantity;
+    }
+
     public function getOption($title): ?ProductOption
     {
         return $this->options[$title] ?? null;
@@ -69,6 +75,17 @@ class Product implements \JsonSerializable, CanCreateFromArray
             $this->options[$title] = (new ProductOption())->setTitle($title);
         }
         return $this->options[$title];
+    }
+
+    public function getCurrentOptions()
+    {
+        foreach ($this->options as $option) {
+            /** @var ProductOption $option */
+            yield $option;
+            if ($optionValue = $option->getCurrentOptionValue()) {
+                yield from $optionValue->getOptions();
+            }
+        }
     }
 
     /** Setters */
@@ -121,6 +138,12 @@ class Product implements \JsonSerializable, CanCreateFromArray
         return $this;
     }
 
+    public function setQuantity(Quantity $quantity)
+    {
+        $this->quantity = $quantity;
+        return $this;
+    }
+
     public function setOption(ProductOption $option)
     {
         $this->options[$option->getTitle()] = $option;
@@ -135,6 +158,7 @@ class Product implements \JsonSerializable, CanCreateFromArray
         foreach ($this->options as $option) {
             $options[] = $option->jsonSerialize();
         }
+        $quantity = $this->getQuantity() ? $this->getQuantity()->jsonSerialize() : null;
         return array_filter([
             'category_id' => $this->categoryId,
             'id' => $this->id,
@@ -145,6 +169,7 @@ class Product implements \JsonSerializable, CanCreateFromArray
                 'price' => $this->price,
                 'unit' => $this->unit,
                 'input_type' => $this->inputType,
+                'quantity' => $quantity,
                 'options' => $options,
             ])
         ]);
@@ -160,7 +185,8 @@ class Product implements \JsonSerializable, CanCreateFromArray
             ->setDescription($data['data']['description'] ?? null)
             ->setPrice($data['data']['price'] ?? null)
             ->setUnit($data['data']['unit'] ?? null)
-            ->setInputType($data['data']['input_type'] ?? null);
+            ->setInputType($data['data']['input_type'] ?? null)
+            ->setQuantity(Quantity::createFromArray($data['data']['quantity']));
 
         foreach ($data['data']['options'] ?? [] as $option) {
             $option = ProductOption::createFromArray($option);

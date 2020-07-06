@@ -11,6 +11,7 @@ class ProductOption implements \JsonSerializable, CanCreateFromArray
     private $emptyValueTitle;
     private $mutuallyExclusive;
     private $values = [];
+    private $value;
 
     /** Getters */
 
@@ -47,6 +48,16 @@ class ProductOption implements \JsonSerializable, CanCreateFromArray
         return $this->values[$title];
     }
 
+    public function getCurrentOptionValue(): ?ProductOptionValue
+    {
+        return array_values($this->values)[$this->value] ?? null;
+    }
+
+    public function getValue(): ?int
+    {
+        return $this->value;
+    }
+
     /** Setters */
 
     public function setTitle($title)
@@ -79,6 +90,12 @@ class ProductOption implements \JsonSerializable, CanCreateFromArray
         return $this;
     }
 
+    public function setValue(?int $value)
+    {
+        $this->value = $value;
+        return $this;
+    }
+
     /** Serialization */
 
     public function jsonSerialize()
@@ -102,7 +119,8 @@ class ProductOption implements \JsonSerializable, CanCreateFromArray
             ->setTitle($data['title'] ?? null)
             ->setIsRequired($data['required'] ?? null)
             ->setEmptyValueTitle($data['empty_value_title'] ?? null)
-            ->setMutuallyExclusive($data['mutually_exclusive'] ?? null);
+            ->setMutuallyExclusive($data['mutually_exclusive'] ?? null)
+            ->setValue($data['value'] ?? null);
 
         foreach ($data['values'] ?? [] as $value) {
             $optionValue = ProductOptionValue::createFromArray($value);
