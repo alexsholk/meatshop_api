@@ -5,28 +5,71 @@
     <meta name="viewport" content="width=device-width">
     <title>Новый заказ</title>
 </head>
-<body style="color: black">
-<table style="max-width: 600px; width: 100%">
+<body>
+<table width="100%" border="1" cellspacing="0" cellpadding="5"
+       style="border-collapse: collapse; border-color: #999; margin-bottom: 20px">
     <tr>
-        <td>
-            <pre>{{ form }}</pre>
-        </td>
+        <th width="20%" style="text-align: left">Имя</th>
+        <td>{{ form.name }}</td>
     </tr>
     <tr>
-        <td>
-            <pre>{{ cart }}</pre>
-            {#            <table style="width: 100%">#}
-            {#                {% for product in data.cart %}#}
-            {#                    <tr>#}
-            {#                        <td><img src="http://api.miloveat.ru{{ product.data.image }}" style="width: 100px"></td>#}
-            {#                        <td>{{ product.data.title }}</td>#}
-            {#                    </tr>#}
-            {#                {% endfor %}#}
-            {#            </table>#}
-        </td>
+        <th style="text-align: left">Телефон</th>
+        <td>{{ phone }}</td>
+    </tr>
+    <tr>
+        <th style="text-align: left">Адрес</th>
+        <td>{{ address }}</td>
+    </tr>
+    <tr>
+        <th style="text-align: left">Время доставки</th>
+        <td>{{ deliveryDate }}, {{ form.delivery.time }}</td>
+    </tr>
+    <tr>
+        <th style="text-align: left">Бесконтактная доставка</th>
+        <td>{{ form.contactlessDelivery ? 'Да' : 'Нет' }}</td>
+    </tr>
+    <tr>
+        <th style="text-align: left">Способ оплаты</th>
+        <td>{{ form.paymentMethod }}</td>
+    </tr>
+</table>
+<table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; border-color: #999;">
+    <tr>
+        <th>Фото</th>
+        <th>Название</th>
+        <th>Опции</th>
+        <th>Цена за кг</th>
+        <th>Вес / количество</th>
+        <th>Базовая стоимость</th>
+        <th>Стоимость добавок</th>
+        <th>Итоговая стоимость</th>
+    </tr>
+    {% for product in products %}
+        <tr>
+            <td width="10%" style="padding: 0">
+                <img src="{{ 'http://api.miloveat.ru' ~ product.image }}" style="display: block; width: 100%" alt="">
+            </td>
+            <td width="10%">{{ product.title }}</td>
+            <td width="20%">
+                <ul style="list-style: none; margin: 0; padding: 0">
+                    {% for option in product.currentOptions %}
+                        {% if option.currentOptionValue %}
+                            <li>{{ option.title }}: {{ option.currentOptionValue.title }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </td>
+            <td>{{ product.currentPrice }} &#8381;</td>
+            <td>{{ product.quantity.amount }} {{ product.quantity.unit }}</td>
+            <td>{{ product.baseCost }} &#8381;</td>
+            <td>{{ product.addonsCost }} &#8381;</td>
+            <td>{{ product.totalCost }} &#8381;</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="7"><strong>Стоимость заказа</strong></td>
+        <td>{{ totalCost }} &#8381;</td>
     </tr>
 </table>
 </body>
 </html>
-
-

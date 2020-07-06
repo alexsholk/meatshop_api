@@ -3,7 +3,6 @@
 namespace App\Controller\Api;
 
 use App\Model\Product;
-use App\Model\ProductOption;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -46,15 +45,48 @@ class OrderController
 
     private function sendOrderEmail(array $data, MailerInterface $mailer)
     {
+        // Convert $data to Products
+        $products = [];
+        $totalCost = 0;
+        foreach ($data['cart'] as $row) {
+            $products[] = $product = Product::createFromArray($row);
+            $totalCost += $product->getTotalCost();
+        }
+
+        $form = $data['form'];
+        $phone = sprintf("+7 (%s) %s-%s-%s",
+            substr($form['phone'], 0, 3),
+            substr($form['phone'], 3, 3),
+            substr($form['phone'], 6, 2),
+            substr($form['phone'], 8)
+        );
+
+        $address = join(', ', array_filter($form['address']));
+
+        $deliveryDate = new \DateTime();
+        switch ($form['delivery']['day']) {
+            case 'Завтра':
+                $deliveryDate->add(new \DateInterval("P1D"));
+                break;
+            case 'Послезавтра':
+                $deliveryDate->add(new \DateInterval("P2D"));
+                break;
+        }
+        $deliveryDate = $deliveryDate->format('d.m.Y');
+
         $mail = (new TemplatedEmail())
             ->from('shop@miloveat.ru')
             ->to(self::ORDER_RECIPIENT_EMAIL)
             ->priority(Email::PRIORITY_HIGH)
-            ->subject('Заказ')
+            ->subject('Заказ на сумму ' . $totalCost . " ₽")
             ->htmlTemplate('emails/order.html.twig')
             ->context([
-                'cart' => json_encode($data['cart'], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
-                'form' => json_encode($data['form'], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
+                'products' => $products,
+                'totalCost' => $totalCost,
+                'form' => $form,
+                'phone' => $phone,
+                'address' => $address,
+                'deliveryDate' => $deliveryDate,
             ]);
 
         $mailer->send($mail);
@@ -67,24 +99,7 @@ class OrderController
     {
         $data = json_decode(file_get_contents(self::ORDER_LOG_PATH . '2020_07_05_03_12.json'), true);
 
-        $product = Product::createFromArray($data['cart'][0]);
-
-        dump($product->getQuantity());
-        dump($product->getCurrentPrice());
-        dump($product->getBaseCost());
-        dump($product->getAddonsCost());
-        dump($product->getTotalCost());
-        foreach ($product->getCurrentOptions() as $option) {
-            /** @var ProductOption $option */
-            $optionValue = $option->getCurrentOptionValue();
-            echo $option->getTitle() . ' - ' . ($optionValue ? $optionValue->getTitle() : 'не выбран') .
-
-                '<br>';
-        }
-
-        die ('ok');
-
-        //$this->sendOrderEmail($data, $mailer);
+        $this->sendOrderEmail($data, $mailer);
 
         return new JsonResponse('OK', Response::HTTP_OK);
     }
