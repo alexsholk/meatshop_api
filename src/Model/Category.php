@@ -2,31 +2,43 @@
 
 namespace App\Model;
 
-class Category implements \JsonSerializable
+use App\Model\Interfaces\CanCreateFromArray;
+
+class Category implements \JsonSerializable, CanCreateFromArray
 {
     private $id;
     private $parentId;
     private $slug;
     private $title;
 
-    public static function createFromArray($data)
+    /** Getters */
+
+    public function getId()
     {
-        return (new Category())
-            ->setId($data['id'])
-            ->setParentId($data['parent_id'])
-            ->setSlug($data['data']['slug'])
-            ->setTitle($data['data']['title']);
+        return $this->id;
     }
+
+    public function getParentId()
+    {
+        return $this->parentId;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /** Setters */
 
     public function setId($id)
     {
         $this->id = $id;
         return $this;
-    }
-
-    public function getId()
-    {
-        return $this->id;
     }
 
     public function setParentId($parentId)
@@ -47,6 +59,8 @@ class Category implements \JsonSerializable
         return $this;
     }
 
+    /** Serialization */
+
     public function jsonSerialize()
     {
         return [
@@ -57,5 +71,14 @@ class Category implements \JsonSerializable
                 'title' => $this->title,
             ],
         ];
+    }
+
+    public static function createFromArray(array $data)
+    {
+        return (new Category())
+            ->setId($data['id'] ?? null)
+            ->setParentId($data['parent_id'] ?? null)
+            ->setSlug($data['data']['slug'] ?? null)
+            ->setTitle($data['data']['title'] ?? null);
     }
 }

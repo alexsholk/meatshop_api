@@ -2,6 +2,7 @@
 
 namespace App\Controller\Api;
 
+use App\Model\Product;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -64,7 +65,13 @@ class OrderController
     public function test(MailerInterface $mailer)
     {
         $data = json_decode(file_get_contents(self::ORDER_LOG_PATH . '2020_07_05_03_12.json'), true);
-        $this->sendOrderEmail($data, $mailer);
+
+        $product = Product::createFromArray($data['cart'][0]);
+
+        dump($product);
+        die;
+
+        //$this->sendOrderEmail($data, $mailer);
 
         return new JsonResponse('OK', Response::HTTP_OK);
     }

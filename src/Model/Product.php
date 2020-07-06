@@ -2,7 +2,9 @@
 
 namespace App\Model;
 
-class Product implements \JsonSerializable
+use App\Model\Interfaces\CanCreateFromArray;
+
+class Product implements \JsonSerializable, CanCreateFromArray
 {
     private $categoryId;
     private $id;
@@ -14,10 +16,62 @@ class Product implements \JsonSerializable
     private $inputType;
     private $options = [];
 
-    public static function create()
+    /** Getters */
+
+    public function getCategoryId()
     {
-        return new Product();
+        return $this->categoryId;
     }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function getUnit()
+    {
+        return $this->unit;
+    }
+
+    public function getInputType()
+    {
+        return $this->inputType;
+    }
+
+    public function getOption($title): ?ProductOption
+    {
+        return $this->options[$title] ?? null;
+    }
+
+    public function getOrCreateOption($title): ProductOption
+    {
+        if (!isset($this->options[$title])) {
+            $this->options[$title] = (new ProductOption())->setTitle($title);
+        }
+        return $this->options[$title];
+    }
+
+    /** Setters */
 
     public function setCategoryId($id)
     {
@@ -29,11 +83,6 @@ class Product implements \JsonSerializable
     {
         $this->id = $id;
         return $this;
-    }
-
-    public function getId()
-    {
-        return $this->id;
     }
 
     public function setTitle($title)
@@ -72,13 +121,13 @@ class Product implements \JsonSerializable
         return $this;
     }
 
-    public function getOption($title): ProductOption
+    public function setOption(ProductOption $option)
     {
-        if (!isset($this->options[$title])) {
-            $this->options[$title] = (new ProductOption())->setTitle($title);
-        }
-        return $this->options[$title];
+        $this->options[$option->getTitle()] = $option;
+        return $this;
     }
+
+    /** Serialization */
 
     public function jsonSerialize()
     {
@@ -99,5 +148,25 @@ class Product implements \JsonSerializable
                 'options' => $options,
             ])
         ]);
+    }
+
+    public static function createFromArray(array $data)
+    {
+        $product = (new Product())
+            ->setCategoryId($data['category_id'] ?? null)
+            ->setId($data['id'] ?? null)
+            ->setTitle($data['data']['title'] ?? null)
+            ->setImage($data['data']['image'] ?? null)
+            ->setDescription($data['data']['description'] ?? null)
+            ->setPrice($data['data']['price'] ?? null)
+            ->setUnit($data['data']['unit'] ?? null)
+            ->setInputType($data['data']['input_type'] ?? null);
+
+        foreach ($data['data']['options'] ?? [] as $option) {
+            $option = ProductOption::createFromArray($option);
+            $product->setOption($option);
+        }
+
+        return $product;
     }
 }

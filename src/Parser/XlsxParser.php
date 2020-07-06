@@ -139,15 +139,15 @@ class XlsxParser
                 ->setDescription($row[self::PRODUCT_DESCRIPTION]);
 
             $option1Value = $product
-                ->getOption($row[self::OPTION_1_TITLE])
+                ->getOrCreateOption($row[self::OPTION_1_TITLE])
                 ->setIsRequired(true)
-                ->getOptionValue($row[self::OPTION_1_VALUE]);
+                ->getOrCreateOptionValue($row[self::OPTION_1_VALUE]);
 
             $pricedOptionValue = trim($row[self::OPTION_2_TITLE]) ?
                 $option1Value
-                    ->getOption($row[self::OPTION_2_TITLE])
+                    ->getOrCreateOption($row[self::OPTION_2_TITLE])
                     ->setIsRequired(true)
-                    ->getOptionValue($row[self::OPTION_2_VALUE]) :
+                    ->getOrCreateOptionValue($row[self::OPTION_2_VALUE]) :
                 $option1Value;
 
             $pricedOptionValue
@@ -164,7 +164,7 @@ class XlsxParser
                 trim($row[self::OPTION_3_VALUE_1])
             ) {
                 $option3 = $option1Value
-                    ->getOption($row[self::OPTION_3_TITLE])
+                    ->getOrCreateOption($row[self::OPTION_3_TITLE])
                     ->setIsRequired(false)
                     ->setEmptyValueTitle('Выберите специи')
                     ->setMutuallyExclusive(1);
@@ -182,7 +182,7 @@ class XlsxParser
                 foreach ($option3cols as $colNumber) {
                     if (trim($row[$colNumber])) {
                         $option3
-                            ->getOptionValue($row[$colNumber])
+                            ->getOrCreateOptionValue($row[$colNumber])
                             ->setPriceMultiplier(0.15);
                     }
                 }
@@ -193,7 +193,7 @@ class XlsxParser
                 trim($row[self::OPTION_4_VALUE_1])
             ) {
                 $option4 = $option1Value
-                    ->getOption($row[self::OPTION_4_TITLE])
+                    ->getOrCreateOption($row[self::OPTION_4_TITLE])
                     ->setIsRequired(false)
                     ->setEmptyValueTitle('Выберите маринад')
                     ->setMutuallyExclusive(1);
@@ -209,7 +209,7 @@ class XlsxParser
                 foreach ($option4cols as $colNumber) {
                     if (trim($row[$colNumber])) {
                         $option4
-                            ->getOptionValue($row[$colNumber])
+                            ->getOrCreateOptionValue($row[$colNumber])
                             ->setPriceMultiplier(0.3);
                     }
                 }

@@ -2,7 +2,9 @@
 
 namespace App\Model;
 
-class ProductOptionValue implements \JsonSerializable
+use App\Model\Interfaces\CanCreateFromArray;
+
+class ProductOptionValue implements \JsonSerializable, CanCreateFromArray
 {
     private $title;
     private $price;
@@ -11,6 +13,53 @@ class ProductOptionValue implements \JsonSerializable
     private $weight;
     private $priceMultiplier;
     private $options = [];
+
+    /** Getters */
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function getUnit()
+    {
+        return $this->unit;
+    }
+
+    public function getInputType()
+    {
+        return $this->inputType;
+    }
+
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    public function getPriceMultiplier()
+    {
+        return $this->priceMultiplier;
+    }
+
+    public function getOption($title): ?ProductOption
+    {
+        return $this->options[$title] ?? null;
+    }
+
+    public function getOrCreateOption($title): ProductOption
+    {
+        if (!isset($this->options[$title])) {
+            $this->options[$title] = (new ProductOption())->setTitle($title);
+        }
+        return $this->options[$title];
+    }
+
+    /** Setters */
 
     public function setTitle($title)
     {
@@ -48,13 +97,13 @@ class ProductOptionValue implements \JsonSerializable
         return $this;
     }
 
-    public function getOption($title): ProductOption
+    public function setOption(ProductOption $option)
     {
-        if (!isset($this->options[$title])) {
-            $this->options[$title] = (new ProductOption())->setTitle($title);
-        }
-        return $this->options[$title];
+        $this->options[$option->getTitle()] = $option;
+        return $this;
     }
+
+    /** Serialization */
 
     public function jsonSerialize()
     {
@@ -71,5 +120,23 @@ class ProductOptionValue implements \JsonSerializable
             'price_multiplier' => $this->priceMultiplier,
             'options' => array_filter($options),
         ]);
+    }
+
+    public static function createFromArray(array $data)
+    {
+        $optionValue = (new ProductOptionValue())
+            ->setTitle($data['title'] ?? null)
+            ->setPrice($data['price'] ?? null)
+            ->setUnit($data['unit'] ?? null)
+            ->setInputType($data['input_type'] ?? null)
+            ->setWeight($data['weight'] ?? null)
+            ->setPriceMultiplier($data['price_multiplier'] ?? null);
+
+        foreach ($data['options'] ?? [] as $option) {
+            $option = ProductOption::createFromArray($option);
+            $optionValue->setOption($option);
+        }
+
+        return $optionValue;
     }
 }

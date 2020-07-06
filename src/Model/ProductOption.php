@@ -2,13 +2,52 @@
 
 namespace App\Model;
 
-class ProductOption implements \JsonSerializable
+use App\Model\Interfaces\CanCreateFromArray;
+
+class ProductOption implements \JsonSerializable, CanCreateFromArray
 {
     private $title;
     private $isRequired;
     private $emptyValueTitle;
     private $mutuallyExclusive;
     private $values = [];
+
+    /** Getters */
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function getIsRequired()
+    {
+        return $this->isRequired;
+    }
+
+    public function getEmptyValueTitle()
+    {
+        return $this->emptyValueTitle;
+    }
+
+    public function getMutuallyExclusive()
+    {
+        return $this->mutuallyExclusive;
+    }
+
+    public function getOptionValue($title): ?ProductOptionValue
+    {
+        return $this->values[$title] ?? null;
+    }
+
+    public function getOrCreateOptionValue($title): ProductOptionValue
+    {
+        if (!isset($this->values[$title])) {
+            $this->values[$title] = (new ProductOptionValue())->setTitle($title);
+        }
+        return $this->values[$title];
+    }
+
+    /** Setters */
 
     public function setTitle($title)
     {
@@ -34,13 +73,13 @@ class ProductOption implements \JsonSerializable
         return $this;
     }
 
-    public function getOptionValue($title): ProductOptionValue
+    public function setOptionValue(ProductOptionValue $optionValue)
     {
-        if (!isset($this->values[$title])) {
-            $this->values[$title] = (new ProductOptionValue())->setTitle($title);
-        }
-        return $this->values[$title];
+        $this->values[$optionValue->getTitle()] = $optionValue;
+        return $this;
     }
+
+    /** Serialization */
 
     public function jsonSerialize()
     {
@@ -55,5 +94,21 @@ class ProductOption implements \JsonSerializable
             'mutually_exclusive' => $this->mutuallyExclusive,
             'values' => array_filter($values),
         ]);
+    }
+
+    public static function createFromArray(array $data)
+    {
+        $option = (new ProductOption())
+            ->setTitle($data['title'] ?? null)
+            ->setIsRequired($data['required'] ?? null)
+            ->setEmptyValueTitle($data['empty_value_title'] ?? null)
+            ->setMutuallyExclusive($data['mutually_exclusive'] ?? null);
+
+        foreach ($data['values'] ?? [] as $value) {
+            $optionValue = ProductOptionValue::createFromArray($value);
+            $option->setOptionValue($optionValue);
+        }
+
+        return $option;
     }
 }
