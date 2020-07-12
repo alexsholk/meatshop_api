@@ -140,12 +140,14 @@ class XlsxParser
 
             $option1Value = $product
                 ->getOrCreateOption($row[self::OPTION_1_TITLE])
+                ->setCode('slicing')
                 ->setIsRequired(true)
                 ->getOrCreateOptionValue($row[self::OPTION_1_VALUE]);
 
             $pricedOptionValue = trim($row[self::OPTION_2_TITLE]) ?
                 $option1Value
                     ->getOrCreateOption($row[self::OPTION_2_TITLE])
+                    ->setCode('type')
                     ->setIsRequired(true)
                     ->getOrCreateOptionValue($row[self::OPTION_2_VALUE]) :
                 $option1Value;
@@ -165,8 +167,8 @@ class XlsxParser
             ) {
                 $option3 = $option1Value
                     ->getOrCreateOption($row[self::OPTION_3_TITLE])
+                    ->setCode('spice')
                     ->setIsRequired(false)
-                    ->setEmptyValueTitle('Выберите специи')
                     ->setMutuallyExclusive(1);
 
 
@@ -194,8 +196,8 @@ class XlsxParser
             ) {
                 $option4 = $option1Value
                     ->getOrCreateOption($row[self::OPTION_4_TITLE])
+                    ->setCode('marinade')
                     ->setIsRequired(false)
-                    ->setEmptyValueTitle('Выберите маринад')
                     ->setMutuallyExclusive(1);
 
                 $option4cols = [

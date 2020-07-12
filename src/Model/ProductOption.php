@@ -6,14 +6,19 @@ use App\Model\Interfaces\CanCreateFromArray;
 
 class ProductOption implements \JsonSerializable, CanCreateFromArray
 {
+    private $code;
     private $title;
     private $isRequired;
-    private $emptyValueTitle;
     private $mutuallyExclusive;
     private $values = [];
     private $value;
 
     /** Getters */
+
+    public function getCode()
+    {
+        return $this->code;
+    }
 
     public function getTitle()
     {
@@ -23,11 +28,6 @@ class ProductOption implements \JsonSerializable, CanCreateFromArray
     public function getIsRequired()
     {
         return $this->isRequired;
-    }
-
-    public function getEmptyValueTitle()
-    {
-        return $this->emptyValueTitle;
     }
 
     public function getMutuallyExclusive()
@@ -60,6 +60,12 @@ class ProductOption implements \JsonSerializable, CanCreateFromArray
 
     /** Setters */
 
+    public function setCode($code)
+    {
+        $this->code = $code;
+        return $this;
+    }
+
     public function setTitle($title)
     {
         $this->title = $title;
@@ -69,12 +75,6 @@ class ProductOption implements \JsonSerializable, CanCreateFromArray
     public function setIsRequired($isRequired)
     {
         $this->isRequired = (bool)$isRequired;
-        return $this;
-    }
-
-    public function setEmptyValueTitle($emptyValueTitle)
-    {
-        $this->emptyValueTitle = $emptyValueTitle;
         return $this;
     }
 
@@ -105,9 +105,9 @@ class ProductOption implements \JsonSerializable, CanCreateFromArray
             $values[] = $value->jsonSerialize();
         }
         return array_filter([
+            'code' => $this->code,
             'title' => $this->title,
             'required' => $this->isRequired,
-            'empty_value_title' => $this->emptyValueTitle,
             'mutually_exclusive' => $this->mutuallyExclusive,
             'values' => array_filter($values),
         ]);
@@ -116,9 +116,9 @@ class ProductOption implements \JsonSerializable, CanCreateFromArray
     public static function createFromArray(array $data)
     {
         $option = (new ProductOption())
+            ->setCode($data['code'] ?? null)
             ->setTitle($data['title'] ?? null)
             ->setIsRequired($data['required'] ?? null)
-            ->setEmptyValueTitle($data['empty_value_title'] ?? null)
             ->setMutuallyExclusive($data['mutually_exclusive'] ?? null)
             ->setValue($data['value'] ?? null);
 

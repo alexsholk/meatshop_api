@@ -69,6 +69,17 @@ class Product implements \JsonSerializable, CanCreateFromArray
         return $this->options[$title] ?? null;
     }
 
+    public function getOptionByCode($code): ?ProductOption
+    {
+        foreach ($this->getCurrentOptions() as $option) {
+            /** @var ProductOption $option */
+            if ($option->getCode() === $code) {
+                return $option;
+            }
+        }
+        return null;
+    }
+
     public function getOrCreateOption($title): ProductOption
     {
         if (!isset($this->options[$title])) {
