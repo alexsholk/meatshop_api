@@ -25,7 +25,7 @@ return [
 <p>
 Доставка в тот же день при заказе до 17:00 (при наличии доступных интервалов). г. Дмитров и ближайшие окрестности. Стоимость доставки: 149 рублей. Бесплатная доставка от 1,000 рублей. Интервалы доставки с 10:00 до 15:00, с 15:00 до 20:00 и с 20:00 до 23:00
 </p>
-<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A23d8245cb6e259f7885b43a49f9c1319eba64f750b6bd690036b0a233a4e0296&amp;source=constructor" width="742" height="674" frameborder="0"></iframe>
+<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A23d8245cb6e259f7885b43a49f9c1319eba64f750b6bd690036b0a233a4e0296&amp;source=constructor" width="100%" height="674" frameborder="0"></iframe>
 </div> 
 
 HTML
