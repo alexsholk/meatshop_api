@@ -74,6 +74,7 @@ class OrderController
         }
         $deliveryDate = $deliveryDate->format('d.m.Y');
 
+        // Email to admin
         $mail = (new TemplatedEmail())
             ->from('shop@miloveat.ru')
             ->to(self::ORDER_RECIPIENT_EMAIL)
@@ -91,17 +92,25 @@ class OrderController
             ]);
 
         $mailer->send($mail);
-    }
 
-    /**
-     * @Route("/test", methods={"GET"})
-     */
-    public function test(MailerInterface $mailer)
-    {
-        $data = json_decode(file_get_contents(self::ORDER_LOG_PATH . '2020_07_05_03_12.json'), true);
+        // Email to client
+        if (!empty($form['email'])) {
+            $mail = (new TemplatedEmail())
+                ->from('shop@miloveat.ru')
+                ->to($form['email'])
+                ->priority(Email::PRIORITY_HIGH)
+                ->subject('Заказ на сумму ' . $totalCost . " ₽")
+                ->htmlTemplate('emails/order.html.twig')
+                ->context([
+                    'products' => $products,
+                    'totalCost' => $totalCost,
+                    'form' => $form,
+                    'phone' => $phone,
+                    'address' => $address,
+                    'deliveryDate' => $deliveryDate,
+                ]);
 
-        $this->sendOrderEmail($data, $mailer);
-
-        return new JsonResponse('OK', Response::HTTP_OK);
+            $mailer->send($mail);
+        }
     }
 }
