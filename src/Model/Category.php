@@ -10,6 +10,7 @@ class Category implements \JsonSerializable, CanCreateFromArray
     private $parentId;
     private $slug;
     private $title;
+    private $image;
 
     /** Getters */
 
@@ -31,6 +32,11 @@ class Category implements \JsonSerializable, CanCreateFromArray
     public function getTitle()
     {
         return $this->title;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
     }
 
     /** Setters */
@@ -59,6 +65,12 @@ class Category implements \JsonSerializable, CanCreateFromArray
         return $this;
     }
 
+    public function setImage($image)
+    {
+        $this->image = $image;
+        return $this;
+    }
+
     /** Serialization */
 
     public function jsonSerialize()
@@ -69,6 +81,7 @@ class Category implements \JsonSerializable, CanCreateFromArray
             'data' => [
                 'slug' => $this->slug,
                 'title' => $this->title,
+                'image' => $this->image,
             ],
         ];
     }
@@ -79,6 +92,7 @@ class Category implements \JsonSerializable, CanCreateFromArray
             ->setId($data['id'] ?? null)
             ->setParentId($data['parent_id'] ?? null)
             ->setSlug($data['data']['slug'] ?? null)
-            ->setTitle($data['data']['title'] ?? null);
+            ->setTitle($data['data']['title'] ?? null)
+            ->setImage($data['data']['image'] ?? null);
     }
 }

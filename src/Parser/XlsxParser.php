@@ -10,7 +10,8 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 class XlsxParser
 {
-    const IMAGE_DIR = '/uploads/';
+    const CATEGORY_IMAGE_DIR = '/uploads/categories/';
+    const PRODUCT_IMAGE_DIR = '/uploads/products/';
 
     const SHEET_TITLE_MEAT = 'Мясо';
     const SHEET_TITLE_MARINADES = 'Маринады';
@@ -113,7 +114,8 @@ class XlsxParser
                 ->setId(++$idCounter)
                 ->setParentId(null)
                 ->setSlug($row[self::CATEGORY_SLUG])
-                ->setTitle($row[self::CATEGORY_TITLE]);
+                ->setTitle($row[self::CATEGORY_TITLE])
+                ->setImage(self::CATEGORY_IMAGE_DIR . $row[self::CATEGORY_SLUG] . '.jpg');
         }
         return $categories;
     }
@@ -135,7 +137,7 @@ class XlsxParser
             $product
                 ->setCategoryId($categories[$row[self::CATEGORY_TITLE]]->getId())
                 ->setTitle($row[self::PRODUCT_TITLE])
-                ->setImage(self::IMAGE_DIR . $row[self::PRODUCT_IMAGE])
+                ->setImage(self::PRODUCT_IMAGE_DIR . $row[self::PRODUCT_IMAGE])
                 ->setDescription($row[self::PRODUCT_DESCRIPTION]);
 
             $option1Value = $product
